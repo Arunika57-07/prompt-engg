@@ -1,7 +1,7 @@
 :root {
-  --bg-dark: #050505;
-  --bg-panel: #111111;
-  --bg-hover: #1a1a1a;
+  --bg-dark: #000000;
+  --bg-panel: #0a0a0a;
+  --bg-hover: #151515;
   --text-main: #FFFFFF;
   --text-sub: #a0a0a0;
   --accent: #ff073a; /* Neon Red */
@@ -57,6 +57,19 @@ header {
   align-items: center;
   margin-bottom: 2rem;
   animation: slideUp 0.6s ease-out;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-dot {
+  color: var(--accent);
+  font-size: 2.2rem;
+  animation: neonPulse 2s infinite;
+  text-shadow: 0 0 15px var(--accent-glow);
 }
 
 header h2 {
