@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Music Streamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1>Admin Dashboard</h1>
+      <a href="index.html" class="nav-links"><i class="fas fa-arrow-left"></i> Back to Player</a>
+    </div>
+
+    <div class="admin-form">
+      <h2 id="formTitle" style="margin-bottom: 1.5rem;">Add New Song</h2>
+      <form id="songForm">
+        <input type="hidden" id="songId">
+        <div class="form-group">
+          <label for="title">Song Title</label>
+          <input type="text" id="title" required>
+        </div>
+        <div class="form-group">
+          <label for="artist">Artist</label>
+          <input type="text" id="artist" required>
+        </div>
+        <div class="form-group">
+          <label for="album">Album</label>
+          <input type="text" id="album">
+        </div>
+        <div class="form-group">
+          <label for="cover_url">Cover Image URL</label>
+          <input type="url" id="cover_url" placeholder="https://...">
+        </div>
+        <div class="form-group">
+          <label for="audio_url">Cloudinary Audio URL</label>
+          <input type="url" id="audio_url" required placeholder="https://res.cloudinary.com/...">
+        </div>
+        <button type="submit" class="btn" id="submitBtn">Save Song</button>
+        <button type="button" class="btn" id="cancelBtn" style="background-color: #555; display: none;">Cancel</button>
+      </form>
+    </div>
+
+    <div class="admin-list">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="adminSongsTable">
+          <!-- Songs list injected here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

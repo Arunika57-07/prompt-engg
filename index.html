@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Streamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="main-container">
+    <header>
+      <h2>Discover</h2>
+      <div class="nav-links">
+        <a href="admin.html">Admin Panel</a>
+      </div>
+      <input type="text" id="searchInput" class="search-bar" placeholder="Search songs, artists, albums...">
+    </header>
+    <div class="songs-grid" id="songsGrid">
+      <!-- Songs will be injected here -->
+      <p>Loading songs...</p>
+    </div>
+  </div>
+
+  <div class="player-bar">
+    <div class="player-info">
+      <img id="playerCover" src="https://via.placeholder.com/56" alt="Cover" class="player-cover">
+      <div class="player-text">
+        <span class="player-title" id="playerTitle">Select a song</span>
+        <span class="player-artist" id="playerArtist">-</span>
+      </div>
+    </div>
+    
+    <div class="player-controls-container">
+      <div class="player-controls">
+        <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+        <button class="play-pause-btn" id="playPauseBtn"><i class="fas fa-play" id="playIcon"></i></button>
+        <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+      </div>
+      <div class="progress-container">
+        <span id="currentTime">0:00</span>
+        <div class="progress-bar-wrapper" id="progressContainer">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+        <span id="totalTime">0:00</span>
+      </div>
+    </div>
+
+    <div class="player-volume">
+      <i class="fas fa-volume-up"></i>
+      <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="audioPlayer"></audio>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
